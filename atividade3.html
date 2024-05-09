@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+<body>
+    <h1>Fast-Food</h1>
+    <p>Nome do cliente: <span id="nc"></span></p>
+    <p>Pedido do cliente: <span id="pc"></span></p>
+    <p>Detalhe do pedido: <span id="dp"></span></p>
+    <p>Valor do pedido:R$ <span id="vp"></span></p>
+    <p>Quantidade do pedido: <span id="qp"></span></p>
+    <p>Valor total do pedido:R$<span id="vtp"></span></p>
+    
+    <script>
+        let nomecliente = prompt("Digite o nome do cliente")
+        let menu = Number(prompt("Qual o seu pedido: 1 - Big Super Sanduba (R$5,00), 2 - Quase Super Sanduba (R$3,00), 3 - Mirradus Sanduba (R$1,50) "))
+        let quantidade = Number(prompt("Digite a quantidade do pedido"))
+        let precofinal = Number
+        let detalhe
+        let escolha
+        let preco = Number
+
+        if(menu == 1){
+            escolha = "Big Super Sanduba"
+            detalhe = "2 Hambúrgueres, queijo, batata-frita e refrigerante"
+            preco = 5.00
+            precofinal = (quantidade * preco)
+        }
+
+        if(menu == 2){
+            escolha = "Quase Super Sanduba"
+            detalhe = "1 Hambúrgueres, batata-frita e refrigerante"
+            preco = 3.00
+            precofinal = (quantidade * preco)
+        }
+
+        if(menu == 3){
+            escolha = "Mirradus Sanduba"
+            detalhe = "1 misto quente e refrigerante"
+            preco = 1.50
+            precofinal = (quantidade * preco)
+        }
+
+
+        document.getElementById("nc").innerHTML = nomecliente
+        document.getElementById("pc").innerHTML = escolha
+        document.getElementById("dp").innerHTML = detalhe
+        document.getElementById("vp").innerHTML = preco
+        document.getElementById("qp").innerHTML = quantidade
+        document.getElementById("vtp").innerHTML = precofinal
+        
+    </script>
+
+</body>
+</html>

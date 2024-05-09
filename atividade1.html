@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+</head>
+<body>
+
+
+<h1>Sobre um aluno e suas notas</h1>
+<p>Nome do aluno: <span id="na"></span></p>
+<p>Primeira nota: <span id="pn"></span></p>
+<p>Segunda nota: <span id="sn"></span></p>
+<p>Terceira nota: <span id="tn"></span></p>
+<p>O aluno foi ou não aprovado: <span id="aprp"></span></p>
+<p>Maior nota: <span id="man"></span></p>
+<p>Nota do meio: <span id="nm"></span></p>
+<p>Menor nota: <span id="men"></span></p>
+
+
+
+<script>
+
+    let nomealuno = prompt("Digite o nome do aluno");
+    let primeiranota = Number(prompt("Digite a primeira nota "));
+    let segundanota = Number(prompt("Digite a segunda nota "));
+    let terceiranota = Number(prompt("Digite a terceira nota "));
+    let resultado;
+    let notamaior;
+    let notamedia;
+    let notamenor;
+
+    resultado = (primeiranota + segundanota + terceiranota) / 3;
+
+    if (resultado >= 6) {
+        resultado = "O aluno " + nomealuno + " foi aprovado com a média " + resultado;
+    } else {
+        resultado = "O aluno " + nomealuno + " foi reprovado com a média " + resultado;
+    }
+
+    if (primeiranota >= segundanota && primeiranota >= terceiranota) {
+        notamaior = primeiranota;
+        if (segundanota >= terceiranota) {
+            notamedia = segundanota;
+            notamenor = terceiranota;
+        } else {
+            notamedia = terceiranota;
+            notamenor = segundanota;
+        }
+    } else if (segundanota >= primeiranota && segundanota >= terceiranota) {
+        notamaior = segundanota;
+        if (primeiranota >= terceiranota) {
+            notamedia = primeiranota;
+            notamenor = terceiranota;
+        } else {
+            notamedia = terceiranota;
+            notamenor = primeiranota;
+        }
+    } else {
+        notamaior = terceiranota;
+        if (primeiranota >= segundanota) {
+            notamedia = primeiranota;
+            notamenor = segundanota;
+        } else {
+            notamedia = segundanota;
+            notamenor = primeiranota;
+        }
+    }
+
+
+
+
+
+
+
+    
+
+    document.getElementById("na").innerHTML = nomealuno;
+    document.getElementById("pn").innerHTML = primeiranota;
+    document.getElementById("sn").innerHTML = segundanota;
+    document.getElementById("tn").innerHTML = terceiranota;
+    document.getElementById("aprp").innerHTML = resultado;
+    document.getElementById("man").innerHTML = notamaior;
+    document.getElementById("nm").innerHTML = notamedia; 
+    document.getElementById("men").innerHTML = notamenor;
+
+
+
+</script>
+
+
+
+</body>
+</html>

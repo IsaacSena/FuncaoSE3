@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+<body>
+    <h1>Leia três nomes e seus pesos</h1>
+    <p>Nome da mais pesada: <span id="nmp"></span></p>
+    <p>Peso da mais pesada: <span id="pmp"></span></p>
+    <p>Nome do peso médio: <span id="npm"></span></p>
+    <p>Peso da média: <span id="pm"></span></p>
+    <p>Nome da mais leve: <span id="nml"></span></p>
+    <p>Peso da mais leve: <span id="pml"></span></p>
+    
+    <script>
+        let nomeprimeira = prompt("Digite o nome da primeira pessoa");
+        let pesoprimeira = Number(prompt("Digite o peso da primeira pessoa"));
+        let nomesegunda = prompt("Digite o nome da segunda pessoa");
+        let pesosegunda = Number(prompt("Digite o peso da segunda pessoa"));
+        let nometerceira = prompt("Digite o nome da terceira pessoa");
+        let pesoterceira = Number(prompt("Digite o peso da terceira pessoa"));
+        let maiorpeso;
+        let pesomedio;
+        let menorpeso;
+        let resultadomaior;
+        let resultadomenor;
+        let resultadomedio;
+
+        if (pesoprimeira >= pesosegunda && pesoprimeira >= pesoterceira) {
+            maiorpeso = pesoprimeira;
+            resultadoMaior = nomeprimeira;
+            if (pesosegunda >= pesoterceira) {
+                pesomedio = pesosegunda;
+                menorpeso = pesoterceira;
+                resultadoMenor = nometerceira;
+                resultadoMedio = nomesegunda;
+            } else {
+                pesomedio = pesoterceira;
+                menorpeso = pesosegunda;
+                resultadoMenor = nomesegunda;
+                resultadoMedio = nometerceira;
+            }
+        } else if (pesosegunda >= pesoprimeira && pesosegunda >= pesoterceira) {
+            maiorpeso = pesosegunda;
+            resultadoMaior = nomesegunda;
+            if (pesoprimeira >= pesoterceira) {
+                pesomedio = pesoprimeira;
+                menorpeso = pesoterceira;
+                resultadoMenor = nometerceira;
+                resultadoMedio = nomeprimeira;
+            } else {
+                pesomedio = pesoterceira;
+                menorpeso = pesoprimeira;
+                resultadoMenor = nomeprimeira;
+                resultadoMedio = nometerceira;
+            }
+        } else {
+            maiorpeso = pesoterceira;
+            resultadoMaior = nometerceira;
+            if (pesoprimeira >= pesosegunda) {
+                pesomedio = pesoprimeira;
+                menorpeso = pesosegunda;
+                resultadoMenor = nomesegunda;
+                resultadoMedio = nomeprimeira;
+            } else {
+                pesomedio = pesosegunda;
+                menorpeso = pesoprimeira;
+                resultadoMenor = nomeprimeira;
+                resultadoMedio = nomesegunda;
+            }
+        }
+
+        document.getElementById("nmp").innerHTML = resultadomaior;
+        document.getElementById("pmp").innerHTML = maiorpeso;
+        document.getElementById("npm").innerHTML = resultadomedio;
+        document.getElementById("pm").innerHTML = pesomedio;
+        document.getElementById("nml").innerHTML = resultadomenor;
+        document.getElementById("pml").innerHTML = menorpeso;
+
+    </script>
+</body>
+</html>
